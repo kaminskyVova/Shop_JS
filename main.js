@@ -94,7 +94,7 @@ function createProduct() {
                 ${
                     product.inStock
                         ? `<button class="list__item-info_btn">Купить</button>`
-                        : ` <button class="list__item-info_btn sold__out">Продан</button>`
+                        : `<button class="list__item-info_btn sold__out">Продан</button>`
                 }
         </li>`;
     });
@@ -107,6 +107,7 @@ function createProduct() {
     return products;
 }
 createProduct();
+
 
 
 function sortbyPrice() {
@@ -158,6 +159,8 @@ function sortbyPrice() {
             .querySelector(".products__list")
             .insertAdjacentHTML("beforeend", product);
     });
+
+    addToFavorites()
 }
 
 const sortbyPriceBtn = document
@@ -215,6 +218,8 @@ function sortbyAge() {
             .querySelector(".products__list")
             .insertAdjacentHTML("beforeend", product);
     });
+
+    addToFavorites()
 }
 
 const sortbyAgeBtn = document
@@ -242,3 +247,12 @@ function addToFavorites() {
 }
 
 addToFavorites()
+
+
+function showMobileMenu() {
+    document.querySelector('.mobile__menu').addEventListener('click', () => {
+        document.querySelector('.site__navigation').classList.toggle('active__menu')
+        console.log('fired');
+    })
+}
+showMobileMenu()

@@ -11,12 +11,13 @@
             <div class="header__logo">
                 <img src="./images/logo.svg" alt="" />
             </div>
-            <nav class="site__navigation">
+            <button class="mobile__menu">Menu</button>
+            <ul class="site__navigation">
                 <li class="site__navigation__item"><a href="#">Main</a></li>
                 <li class="site__navigation__item"><a href="#">Gallery</a></li>
                 <li class="site__navigation__item"><a href="#">News</a></li>
                 <li class="site__navigation__item"><a href="#">Profile</a></li>
-            </nav>
+            </ul>
             <div class="header__contacts">
                 <p class="header__contacts-tel">+544 3490 00000</p>
                 <p class="header__contacts-call-on">Звони скорее!</p>
@@ -219,7 +220,7 @@
             <div class="footer__right">
                 <form class="footer_right-form" action="#">
                     <div class="form__input">
-                        <input type="mail" placeholder="Email" />
+                        <input type="mail" placeholder="Email" name="email" required/>
                         <button class="form__btn" type="submit">Подписаться</button>
                     </div>
                     <label for="form__checkbox">
