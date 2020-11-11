@@ -386,6 +386,7 @@ a {
     background: #FFFFFF;
     cursor: pointer;
     margin-top: 68px;
+    margin-bottom: 30px;
 
     font-family: "Montserrat", sans-serif;
     font-style: normal;
@@ -408,8 +409,8 @@ a {
     width: 59px;
     height: 59px;
     position: absolute;
-    left: 308px;
-    top: 1494px;
+    left: 110px;
+    top: 1497px;
     background: #6EBBD3;
     text-align: center;
     border: none;
@@ -662,15 +663,11 @@ label:hover {
     /* scroll__up-btn  */
 
     .scroll__up-btn {
-        /* top: 2124px;
-        left: -255px;
-        position: absolute; */
-
         width: 59px;
         height: 59px;
         position: absolute;
-        left: 308px;
-        top: 1494px;
+        left: -277px;
+        top: 2082px;
         background: #6EBBD3;
         text-align: center;
         border: none;
@@ -832,8 +829,8 @@ label:hover {
     }
 
     .scroll__up-btn {
-        /* display: none; */
-        width: 59px;
+        display: none;
+        /* width: 59px;
         height: 59px;
         position: fixed;
         left: 308px;
@@ -844,6 +841,6 @@ label:hover {
         outline: none;
         cursor: pointer;
         margin-left: 1114px;
-        margin-bottom: 40px;
+        margin-bottom: 40px; */
     }
 }
