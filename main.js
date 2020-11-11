@@ -8,6 +8,7 @@ const productCards = [
         pawns: "4",
         price: "30000",
         inStock: true,
+        discount: 40,
     },
     {
         id: 2,
@@ -18,6 +19,7 @@ const productCards = [
         pawns: "4",
         price: "40000",
         inStock: false,
+        discount: null,
     },
     {
         id: 3,
@@ -28,6 +30,7 @@ const productCards = [
         pawns: "4",
         price: "20000",
         inStock: true,
+        discount: null,
     },
     {
         id: 4,
@@ -38,6 +41,7 @@ const productCards = [
         pawns: "4",
         price: "20000",
         inStock: true,
+        discount: null,
     },
     {
         id: 5,
@@ -48,6 +52,7 @@ const productCards = [
         pawns: "4",
         price: "25000",
         inStock: true,
+        discount: 40,
     },
     {
         id: 6,
@@ -58,6 +63,7 @@ const productCards = [
         pawns: "4",
         price: "10000",
         inStock: false,
+        discount: null,
     },
 ];
 
@@ -95,6 +101,24 @@ function createProduct() {
                     product.inStock
                         ? `<button class="list__item-info_btn">Купить</button>`
                         : `<button class="list__item-info_btn sold__out">Продан</button>`
+                }
+                ${
+                    product.discount
+                        ? `<span style="
+                            display: block;
+                            position: absolute;
+                            top: 36px;
+                            left: 25px;
+                            color: #fff;
+                            background: red;
+                            width: 78px;
+                            height: 39px;
+                            border-radius: 10px;
+                            font-size: 16px;
+                            line-height: 20px;
+                            padding-top: 8px;
+                        ">-${product.discount}%</span>`
+                        : ''
                 }
         </li>`;
     });
@@ -150,6 +174,24 @@ function sortbyPrice() {
                     product.inStock
                         ? `<button class="list__item-info_btn">Купить</button>`
                         : ` <button class="list__item-info_btn sold__out">Продан</button>`
+                }
+                ${
+                    product.discount
+                        ? `<span style="
+                            display: block;
+                            position: absolute;
+                            top: 36px;
+                            left: 25px;
+                            color: #fff;
+                            background: red;
+                            width: 78px;
+                            height: 39px;
+                            border-radius: 10px;
+                            font-size: 16px;
+                            line-height: 20px;
+                            padding-top: 8px;
+                        ">-${product.discount}%</span>`
+                        : ''
                 }
         </li>`;
     });
@@ -210,6 +252,24 @@ function sortbyAge() {
                         ? `<button class="list__item-info_btn">Купить</button>`
                         : ` <button class="list__item-info_btn sold__out">Продан</button>`
                 }
+                ${
+                    product.discount
+                        ? `<span style="
+                            display: block;
+                            position: absolute;
+                            top: 36px;
+                            left: 25px;
+                            color: #fff;
+                            background: red;
+                            width: 78px;
+                            height: 39px;
+                            border-radius: 10px;
+                            font-size: 16px;
+                            line-height: 20px;
+                            padding-top: 8px;
+                        ">-${product.discount}%</span>`
+                        : ''
+                }
         </li>`;
     });
 
@@ -256,3 +316,29 @@ function showMobileMenu() {
     })
 }
 showMobileMenu()
+
+
+const scrollBtn = document.querySelector('.scroll__up-btn').addEventListener('click', scrollUp)
+
+window.addEventListener('scroll',   function() {
+    const scrollElem = document.querySelector('.scroll__up-btn') 
+
+    if (document.body.scrollTop > document.documentElement.clientHeight) {
+        scrollElem.style.display = 'block'
+    } else {
+        scrollElem.style.display = 'none'
+    }
+})
+
+let timeOut
+
+function scrollUp() {
+    let top = Math.max(document.body.scrollTop, document.documentElement.scrollTop)
+    if(top > 0) {
+        window.scroll(0, -100)
+        timeOut = setTimeout('scrollUp', 20)
+    } else {
+        clearTimeout(timeOut)
+    }
+}
+
